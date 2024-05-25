@@ -46,6 +46,7 @@ Log in to your MySQL server and create a database:
 CREATE DATABASE db;
 
 Project Structure
+<br>
 book_api/
 ├── app.py
 ├── config.py
