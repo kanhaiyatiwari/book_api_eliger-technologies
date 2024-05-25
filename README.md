@@ -45,11 +45,62 @@ book_api/
 
 
 ## Configuration
-```
+
 Change username and password in `config.py`. Replace `your_username` and `your_password` with your MySQL credentials.
 
+ ## Run the Flask Application
 
+- Run the Flask application:
+  ```bash
+     python app.py`
+ 
 
+## Validation
+
+To ensure data integrity and correctness, validation is performed on the incoming data. This includes:
+1. **Presence Check:** Ensure all fields (title, author, isbn, publication_date) are present.
+2. **Unique Constraint:** Ensure the ISBN is unique for each book.
+3. **Data Type Check:** Ensure the publication date is in the correct date format.
+py;
+ ## Testing the API
+
+You can use tools like Postman or cURL to test the API endpoints.
+
+- **POST /books**
+  - URL: `http://127.0.0.1:5000/books`
+  - Example Body:
+    ```json
+    {
+      "title": "Book Title",
+      "author": "Author Name",
+      "isbn": "1234567890123",
+      "publication_date": "2023-05-01"
+    }
+    ```
+
+- **GET /books/<book_id>**
+  - URL: `http://127.0.0.1:5000/books/8`
+
+- **PUT /books/<book_id>**
+  - URL: `http://127.0.0.1:5000/books/8`
+  - Example Body:
+    ```json
+    {
+      "title": "Updated Book Title",
+      "author": "Updated Author Name",
+      "isbn": "1234567890123",
+      "publication_date": "2023-05-01"
+    }
+    ```
+
+- **DELETE /books/<book_id>**
+  - URL: `http://127.0.0.1:5000/books/8`
+
+ ## Features
+- CRUD Operations: Create, Read, Update, and Delete book records.
+- Validation: Ensures data integrity and correctness.
+- Error Handling: Handles missing data, duplicate entries, and not found errors gracefully.
+- Data Model: Uses SQLAlchemy ORM for defining data models and interacting with the MySQL database.
 
 
 
