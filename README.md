@@ -1,112 +1,33 @@
-# book_api_eliger-technologies
-Introduction
+# Book API
+
+## Introduction
 This project involves creating a RESTful API for managing a simple book database using Python, Flask, SQLAlchemy, and MySQL. The API supports Create, Read, Update, and Delete (CRUD) operations on book records.
 
 Each book record contains the following fields:
+- Title
+- Author
+- ISBN
+- Publication Date
 
-.Title
-.Author
-.ISBN
-Publication Date
+## Prerequisites
+Before you begin, ensure you have the following installed:
 
-Prerequisites
-Before you begin, ensure you have the following installed:-
+1. **Python 3.8+**: [Download Python](https://www.python.org/downloads/)
+2. **MySQL**: [Download MySQL](https://dev.mysql.com/downloads/mysql/)
+3. **MySQL Connector for Python**: Install via pip using `pip install mysql-connector-python`
+4. **Visual Studio Code or PyCharm**: For editing the code
 
-1 Python 3.8+: Download Python
-2 MySQL: Download MySQL
-3 MySQL Connector for Python: Install via pip
-4 Visual Studio Code or PyCharm: For editing the code
+## Project Setup
 
-Project Setup
-1. Install Python and MySQL
- .Python: Follow the installation instructions on the Python website.
- .MySQL: Follow the installation instructions on the MySQL website.
+### 1. Install Python and MySQL
+- **Python**: Follow the installation instructions on the [Python website](https://www.python.org/downloads/).
+- **MySQL**: Follow the installation instructions on the [MySQL website](https://dev.mysql.com/downloads/mysql/).
 
+### 2. Download and Unzip the Project
+- Download the `book_api.zip` file.
+- Unzip the file to a desired location using any unzipping tool (e.g., WinRAR, 7-Zip, or the built-in unzip tool on your operating system).
 
-2. Download and Unzip the Project
-. Download the book_api.zip file.
-. Unzip the file to a desired location using any unzipping tool (e.g., WinRAR, 7-Zip, or the built-in unzip tool on your operating system).
-
-3. Set Up a Virtual Environment
+### 3. Set Up a Virtual Environment
+```sh
 python -m venv venv
 source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
- if needed otherwise it will work fine
-
-4. Install Required Packages
-Install the required packages using pip:
-pip install Flask Flask-SQLAlchemy mysql-connector-python
-  or
-Flask
-Flask-SQLAlchemy
-mysql-connector-python
-
-4. Create the MySQL Database
-Log in to your MySQL server and create a database:
-
-CREATE DATABASE db;
-
-Project Structure
-<br>
-book_api/
-├── app.py
-├── config.py
-├── models.py
-└── doc.txt
-
-
-Configuration
-change username and password in config.py config.py
-Replace your_username and your_password with your MySQL credentials.
-
-
-Run the Flask application:
-python app.py
-or if you are using vscode then click rigth and on app.py file and click on run in terminal
-
-
-Validation
-To ensure data integrity and correctness, validation is performed on the incoming data. This includes:
-
-1 Presence Check: Ensure all fields (title, author, isbn, publication_date) are present.
-2 Unique Constraint: Ensure the ISBN is unique for each book.
-3 Data Type Check: Ensure the publication date is in the correct date format.
-
-Testing the API
-You can use tools like Postman or cURL to test the API endpoints.
-
-post book :
-post   http://127.0.0.1:5000/books
-body exmaple:-
-{
-  "title": "Book Title",
-  "author": "Author Name",
-  "isbn": "1234567890123",
-  "publication_date": "2023-05-01"
-}
-
-Get a Single Book (GET /books/<book_id>)
-
-http://127.0.0.1:5000/books/8
-
-
-Update a Book (PUT /books/<book_id>)
-http://127.0.0.1:5000/books/8
-
-{
-  "title": "Updated Book Title",
-  "author": "Updated Author Name",
-  "isbn": "1234567890123",
-  "publication_date": "2023-05-01"
-}
-
-
-Delete a Book (DELETE /books/<book_id>)
- delete :-  http://127.0.0.1:5000/books/8
-
-
-
-Features
- 1  CRUD Operations: Create, Read, Update, and Delete book records.
- 2  Validation: Ensures data integrity and correctness.
- 3  Error Handling: Handles missing data, duplicate entries, and not found errors gracefully.
- 4  Data Model: Uses SQLAlchemy ORM for defining data models and interacting with the MySQL database.
